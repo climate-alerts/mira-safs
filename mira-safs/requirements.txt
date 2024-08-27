@@ -8,3 +8,4 @@ scikit-learn
 geopandas
 leafmap
 Faker
+setuptools
