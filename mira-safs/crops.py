@@ -5,43 +5,50 @@ from sklearn.linear_model import LinearRegression
 from pathlib import Path
 
 def load_data():
-    # Define the path to the 'assets' directory
+    """Load data from the 'assets' directory."""
     assets_path = Path(__file__).parent / 'assets'
-
-    # Load the CSV files from the 'assets' directory
     crops_data = pd.read_csv(assets_path / 'crops_data.csv')
     soil_data = pd.read_csv(assets_path / 'soil_data.csv')
     pest_pathogen_data = pd.read_csv(assets_path / 'pest_pathogen_data.csv')
     fertilizers_data = pd.read_csv(assets_path / 'fertilizers_data.csv')
-    
     return crops_data, soil_data, pest_pathogen_data, fertilizers_data
 
 def predict_productivity(soil_datarow, model):
-    # Predict the productivity based on soil conditions
+    """Predict productivity based on soil conditions."""
     features = soil_datarow[['soil_nitrogen', 'soil_phosphorus', 'soil_potassium', 
                              'soil_moisture', 'soil_ph', 'organic_matter']].values.reshape(1, -1)
     predicted_productivity = model.predict(features)
     return predicted_productivity[0]
 
+def predict_fertilizer_quantity(soil_datarow, model):
+    """Predict fertilizer quantity based on soil conditions."""
+    features = soil_datarow[['soil_nitrogen', 'soil_phosphorus', 'soil_potassium', 
+                             'soil_moisture', 'soil_ph', 'organic_matter']].values.reshape(1, -1)
+    predicted_fertilizer_quantity = model.predict(features)
+    return predicted_fertilizer_quantity[0]
+
 def app():
+    """Main function to run the Streamlit app."""
     # Load data
     crops_data, soil_data, pest_pathogen_data, fertilizers_data = load_data()
 
-    # Use the correct column name based on what exists in your data
-    id_column = 'id'  # Change this if your ID column is named differently
-
+    id_column = 'id'
     if id_column not in crops_data.columns or id_column not in soil_data.columns:
         st.error(f"'{id_column}' column not found in the datasets. Please check the column names.")
         return
 
-    # Merge crops_data with soil_data to ensure alignment based on the 'id'
+    # Merge datasets
     data = pd.merge(soil_data, crops_data[[id_column, 'production']], on=id_column)
+    data = pd.merge(data, fertilizers_data[[id_column, 'quantity']], on=id_column)
 
-    # Train a model on the aligned dataset for prediction
+    # Train models
     X = data[['soil_nitrogen', 'soil_phosphorus', 'soil_potassium', 
               'soil_moisture', 'soil_ph', 'organic_matter']].values
-    y = data['production'].values
-    model = LinearRegression().fit(X, y)
+    y_productivity = data['production'].values
+    y_fertilizer = data['quantity'].values
+
+    productivity_model = LinearRegression().fit(X, y_productivity)
+    fertilizer_model = LinearRegression().fit(X, y_fertilizer)
 
     # Create tabs
     tabs = st.tabs(["Crops Overview", "Soil Conditions", "Pest and Pathogen", "Fertilizers"])
@@ -53,7 +60,6 @@ def app():
         historical production trends, and forecasts for future yields based on existing soil conditions.
         """)
         
-        # Create 2x2 layout for graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -75,19 +81,15 @@ def app():
 
         with row2:
             st.subheader("Productivity Prediction per Field")
-            # Get the current production values
             current_production = data['production'].values
-            # Get the predicted productivity values
-            productivity_predictions = model.predict(X)
+            productivity_predictions = productivity_model.predict(X)
 
-            # Create a DataFrame to hold both current and predicted values
             comparison_df = pd.DataFrame({
                 'Field ID': data[id_column],
                 'Current Production': current_production,
                 'Predicted Productivity': productivity_predictions
             })
 
-            # Plot the comparison graph
             fig = px.line(comparison_df, x='Field ID', y=['Current Production', 'Predicted Productivity'],
                           title="Current vs Predicted Productivity per Field",
                           labels={'value': 'Production', 'variable': 'Type'},
@@ -101,7 +103,6 @@ def app():
        moisture content, and organic matter. These elements are vital for assessing and enhancing crop productivity.
         """)
         
-        # Create 2x2 layout for graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -136,7 +137,6 @@ def app():
         thereby facilitating effective management and mitigation approaches.
         """)
         
-        # Create 2x2 layout for graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -169,7 +169,6 @@ def app():
        amounts, and timing of fertilizer usage. Grasping these patterns is essential for enhancing crop yields and preserving soil health.
         """)
         
-        # Create 2x2 layout for graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -184,15 +183,27 @@ def app():
             st.plotly_chart(fig)
 
         with row1:
-            st.subheader("Fertilizer Quantity Over Time")
-            # Assuming there's a date column in fertilizers_data, adjust as necessary
-            # fig = px.line(fertilizers_data, x='date', y='quantity', color='type', title="Fertilizer Quantity Over Time")
-            # st.plotly_chart(fig)
+            st.subheader("Fertilizer Quantity Comparison per Field")
+            # Predict fertilizer quantities
+            X_fertilizer = soil_data[['soil_nitrogen', 'soil_phosphorus', 'soil_potassium', 
+                                      'soil_moisture', 'soil_ph', 'organic_matter']].fillna(0)
+            predicted_fertilizer_quantities = fertilizer_model.predict(X_fertilizer)
+
+            # Combine actual and predicted data
+            comparison_df = pd.DataFrame({
+                'Field ID': data[id_column],
+                'Actual Quantity': data['quantity'],
+                'Predicted Quantity': predicted_fertilizer_quantities
+            })
+
+            fig = px.bar(comparison_df, x='Field ID', y=['Actual Quantity', 'Predicted Quantity'],
+                         title="Actual vs Predicted Fertilizer Quantity per Field",
+                         labels={'value': 'Quantity', 'variable': 'Type'},
+                         barmode='group')
+            st.plotly_chart(fig)
 
         with row2:
             st.subheader("Fertilizer Application Prediction")
-            # This would require additional data or model to predict future fertilizer needs
-            # Here, we use a placeholder example
             fig = px.bar(fertilizers_data, x=id_column, y='quantity', title="Predicted Fertilizer Needs")
             st.plotly_chart(fig)
 
