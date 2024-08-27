@@ -1,0 +1,51 @@
+id,soil_nitrogen,soil_phosphorus,soil_potassium,soil_moisture,soil_ph,organic_matter,recommendation
+1,34.27,19.44,51.49,71.5,7.76,6.14,Adjust soil pH to optimal range (6.0-7.5).
+2,30.24,33.4,18.17,50.29,6.42,9.47,Add potassium supplements.
+3,29.87,15.25,54.63,20.38,7.08,5.48,Improve irrigation to increase soil moisture.
+4,28.32,13.54,38.16,40.61,7.25,4.61,Apply phosphorus-rich fertilizers. Increase organic matter through compost or green manure.
+5,35.54,17.59,55.72,38.36,6.31,2.01,Increase organic matter through compost or green manure.
+6,31.19,27.0,52.04,68.9,7.47,2.82,Increase organic matter through compost or green manure.
+7,11.52,37.02,30.93,33.29,6.4,8.84,Increase nitrogen levels through fertilization.
+8,40.91,22.02,41.15,52.22,7.57,8.72,Adjust soil pH to optimal range (6.0-7.5).
+9,44.6,12.37,44.2,36.92,6.29,4.31,Apply phosphorus-rich fertilizers. Increase organic matter through compost or green manure.
+10,32.27,32.72,33.76,21.88,5.55,6.83,Improve irrigation to increase soil moisture. Adjust soil pH to optimal range (6.0-7.5).
+11,36.93,26.98,33.12,72.16,5.67,4.3,Adjust soil pH to optimal range (6.0-7.5). Increase organic matter through compost or green manure.
+12,43.87,27.05,32.87,36.07,7.61,3.83,Adjust soil pH to optimal range (6.0-7.5). Increase organic matter through compost or green manure.
+13,26.61,33.79,37.46,20.65,6.96,2.4,Improve irrigation to increase soil moisture. Increase organic matter through compost or green manure.
+14,30.76,26.85,48.88,27.7,7.62,9.59,Improve irrigation to increase soil moisture. Adjust soil pH to optimal range (6.0-7.5).
+15,16.25,36.35,17.55,22.55,6.06,6.44,Increase nitrogen levels through fertilization. Add potassium supplements. Improve irrigation to increase soil moisture.
+16,33.08,26.81,33.17,78.8,6.18,5.24,Soil conditions are optimal.
+17,16.77,19.12,53.34,66.36,7.14,3.12,Increase nitrogen levels through fertilization. Increase organic matter through compost or green manure.
+18,26.39,35.63,49.49,35.94,6.75,9.74,Soil conditions are optimal.
+19,18.06,18.16,19.36,42.17,6.74,4.93,Increase nitrogen levels through fertilization. Add potassium supplements. Increase organic matter through compost or green manure.
+20,27.24,16.81,39.82,63.56,7.47,5.77,Soil conditions are optimal.
+21,14.31,37.92,20.57,53.96,7.07,2.57,Increase nitrogen levels through fertilization. Add potassium supplements. Increase organic matter through compost or green manure.
+22,25.14,33.46,44.98,52.14,7.84,6.22,Adjust soil pH to optimal range (6.0-7.5).
+23,10.86,24.9,46.29,38.48,7.67,5.51,Increase nitrogen levels through fertilization. Adjust soil pH to optimal range (6.0-7.5).
+24,20.37,38.29,59.86,66.74,7.13,3.91,Increase organic matter through compost or green manure.
+25,16.32,33.81,47.32,49.81,6.72,8.82,Increase nitrogen levels through fertilization.
+26,28.39,37.79,34.34,71.05,6.31,9.11,Soil conditions are optimal.
+27,48.26,20.14,57.81,50.13,7.31,2.27,Increase organic matter through compost or green manure.
+28,12.73,30.67,31.67,31.45,7.36,9.34,Increase nitrogen levels through fertilization.
+29,35.79,10.87,36.72,48.42,7.2,8.17,Apply phosphorus-rich fertilizers.
+30,42.64,37.95,25.42,40.73,5.98,6.86,Adjust soil pH to optimal range (6.0-7.5).
+31,11.6,22.6,21.61,34.42,6.01,2.96,Increase nitrogen levels through fertilization. Add potassium supplements. Increase organic matter through compost or green manure.
+32,29.88,20.85,45.45,46.18,7.36,8.46,Soil conditions are optimal.
+33,19.1,14.21,44.7,45.52,7.13,9.04,Increase nitrogen levels through fertilization. Apply phosphorus-rich fertilizers.
+34,23.37,11.26,47.33,25.62,6.83,9.39,Apply phosphorus-rich fertilizers. Improve irrigation to increase soil moisture.
+35,14.19,27.18,22.94,76.27,6.01,7.25,Increase nitrogen levels through fertilization. Add potassium supplements.
+36,40.07,24.02,17.8,55.45,7.97,2.31,Add potassium supplements. Adjust soil pH to optimal range (6.0-7.5). Increase organic matter through compost or green manure.
+37,35.36,38.61,43.18,51.9,6.75,6.67,Soil conditions are optimal.
+38,49.3,35.73,23.77,65.82,5.56,5.27,Add potassium supplements. Adjust soil pH to optimal range (6.0-7.5).
+39,34.12,17.46,20.11,69.79,7.7,7.2,Add potassium supplements. Adjust soil pH to optimal range (6.0-7.5).
+40,34.59,28.23,52.66,78.73,7.24,3.78,Increase organic matter through compost or green manure.
+41,33.36,37.6,27.8,30.68,7.0,8.72,Soil conditions are optimal.
+42,11.84,38.61,32.0,34.46,7.25,6.95,Increase nitrogen levels through fertilization.
+43,34.4,14.94,59.75,20.9,7.59,9.73,Apply phosphorus-rich fertilizers. Improve irrigation to increase soil moisture. Adjust soil pH to optimal range (6.0-7.5).
+44,47.54,39.24,51.94,64.04,6.56,2.62,Increase organic matter through compost or green manure.
+45,19.35,12.61,15.41,72.39,6.68,3.64,Increase nitrogen levels through fertilization. Apply phosphorus-rich fertilizers. Add potassium supplements. Increase organic matter through compost or green manure.
+46,34.23,21.84,56.72,20.74,7.76,8.09,Improve irrigation to increase soil moisture. Adjust soil pH to optimal range (6.0-7.5).
+47,16.75,28.03,29.81,65.22,7.02,6.97,Increase nitrogen levels through fertilization.
+48,39.38,20.54,35.54,57.13,7.25,3.7,Increase organic matter through compost or green manure.
+49,49.43,22.95,34.35,74.14,7.37,5.7,Soil conditions are optimal.
+50,40.1,34.81,17.0,51.54,5.51,8.14,Add potassium supplements. Adjust soil pH to optimal range (6.0-7.5).

@@ -1,0 +1,101 @@
+id,livestock_id,vaccines,diseases,check_date
+1,20,Brucellosis,"Mastitis, Bluetongue, Bovine Tuberculosis",2024-03-08
+2,50,"Tuberculosis, Brucellosis, Parvovirus",Pinkeye,2024-03-17
+3,12,"Brucellosis, Leptospirosis","Foot and Mouth Disease, Bovine Tuberculosis, Brucellosis",2024-02-12
+4,39,"Bovine Viral Diarrhea, Foot and Mouth Disease, Newcastle Disease","Mastitis, Ringworm",2024-01-11
+5,82,"Tuberculosis, Anthrax",Foot and Mouth Disease,2024-07-20
+6,18,"Newcastle Disease, Tetanus",Ringworm,2024-06-10
+7,8,"Rabies, Distemper","Mastitis, Bovine Tuberculosis",2024-06-13
+8,71,Pasteurella,"Bluetongue, Brucellosis",2024-05-11
+9,84,Tuberculosis,Foot and Mouth Disease,2024-04-20
+10,76,"Rabies, Distemper",Worms,2023-08-20
+11,96,"Bovine Viral Diarrhea, Foot and Mouth Disease, Leptospirosis",Pinkeye,2023-08-20
+12,77,"Leptospirosis, Pasteurella","Brucellosis, Bovine Tuberculosis, Mastitis",2024-04-04
+13,48,"Brucellosis, Newcastle Disease",Leptospirosis,2024-05-18
+14,65,"Bovine Viral Diarrhea, Foot and Mouth Disease, Pasteurella",Bovine Tuberculosis,2023-10-09
+15,97,"Tetanus, Brucellosis, Bovine Viral Diarrhea, Foot and Mouth Disease","Mastitis, Brucellosis",2023-11-16
+16,81,"Leptospirosis, Bovine Viral Diarrhea, Foot and Mouth Disease","Bluetongue, Worms, Foot and Mouth Disease",2024-04-12
+17,79,"Tuberculosis, Newcastle Disease, Parvovirus",Pinkeye,2023-11-05
+18,18,"Bovine Viral Diarrhea, Foot and Mouth Disease","Pinkeye, Bluetongue, Foot and Mouth Disease",2024-06-14
+19,79,"Bovine Viral Diarrhea, Foot and Mouth Disease, Leptospirosis, Rabies, Distemper",Lungworm,2023-12-14
+20,87,"Tuberculosis, Tetanus","Pinkeye, Lungworm",2023-11-13
+21,72,"Tetanus, Leptospirosis, Brucellosis","Mastitis, Bluetongue",2023-12-19
+22,44,"Anthrax, Tuberculosis","Leptospirosis, Ringworm",2024-07-18
+23,91,"Rabies, Distemper, Pasteurella",Foot and Mouth Disease,2024-06-03
+24,80,Tuberculosis,"Pinkeye, Leptospirosis",2023-10-06
+25,30,"Rabies, Distemper, Parvovirus","Bluetongue, Ringworm",2024-07-24
+26,11,Brucellosis,"Bovine Tuberculosis, Worms, Pinkeye",2024-03-27
+27,98,"Parvovirus, Leptospirosis","Bovine Tuberculosis, Foot and Mouth Disease, Brucellosis",2024-03-28
+28,41,Pasteurella,"Leptospirosis, Bluetongue, Bovine Tuberculosis",2024-03-24
+29,68,"Rabies, Distemper, Newcastle Disease, Tuberculosis",Bluetongue,2023-09-18
+30,45,"Parvovirus, Newcastle Disease","Bluetongue, Pinkeye, Lungworm",2024-05-07
+31,61,"Pasteurella, Bovine Viral Diarrhea, Foot and Mouth Disease, Brucellosis","Mastitis, Lungworm, Bovine Tuberculosis",2024-04-06
+32,32,"Brucellosis, Tetanus",Ringworm,2024-01-28
+33,94,"Tuberculosis, Leptospirosis, Anthrax","Leptospirosis, Foot and Mouth Disease",2023-08-27
+34,59,"Leptospirosis, Bovine Viral Diarrhea, Foot and Mouth Disease","Bovine Tuberculosis, Foot and Mouth Disease, Brucellosis",2024-07-05
+35,45,"Newcastle Disease, Parvovirus, Brucellosis","Pinkeye, Leptospirosis",2023-11-19
+36,92,Tuberculosis,"Foot and Mouth Disease, Leptospirosis",2024-06-17
+37,78,Tetanus,"Ringworm, Bovine Tuberculosis",2024-07-13
+38,86,Parvovirus,Mastitis,2024-02-24
+39,99,"Rabies, Distemper, Tuberculosis, Leptospirosis","Brucellosis, Lungworm, Foot and Mouth Disease",2023-10-19
+40,99,"Tetanus, Parvovirus","Leptospirosis, Lungworm",2024-02-19
+41,29,"Tetanus, Pasteurella, Rabies, Distemper","Pinkeye, Bovine Tuberculosis, Ringworm",2024-05-20
+42,55,"Rabies, Distemper",Ringworm,2024-05-27
+43,84,"Anthrax, Parvovirus, Leptospirosis","Ringworm, Lungworm",2023-11-26
+44,28,"Rabies, Distemper, Anthrax","Pinkeye, Bovine Tuberculosis, Ringworm",2024-05-06
+45,61,"Tetanus, Parvovirus","Ringworm, Mastitis",2023-08-22
+46,73,"Anthrax, Newcastle Disease",Bovine Tuberculosis,2024-04-22
+47,59,Tetanus,Bluetongue,2023-11-20
+48,85,"Newcastle Disease, Rabies, Distemper, Pasteurella",Leptospirosis,2024-03-21
+49,5,"Leptospirosis, Anthrax, Tuberculosis",Bovine Tuberculosis,2023-08-24
+50,96,"Bovine Viral Diarrhea, Foot and Mouth Disease","Brucellosis, Lungworm",2024-08-06
+51,83,Leptospirosis,Worms,2024-05-03
+52,8,"Parvovirus, Pasteurella",Mastitis,2024-04-11
+53,31,Newcastle Disease,Pinkeye,2023-10-18
+54,100,Pasteurella,Foot and Mouth Disease,2024-07-09
+55,74,"Tetanus, Tuberculosis, Anthrax","Pinkeye, Brucellosis",2023-12-26
+56,54,"Tuberculosis, Bovine Viral Diarrhea, Foot and Mouth Disease, Anthrax","Mastitis, Bluetongue, Lungworm",2023-12-21
+57,89,"Rabies, Distemper, Tuberculosis, Bovine Viral Diarrhea, Foot and Mouth Disease","Leptospirosis, Worms, Bluetongue",2024-03-05
+58,20,"Anthrax, Tuberculosis, Bovine Viral Diarrhea, Foot and Mouth Disease","Bovine Tuberculosis, Mastitis",2024-07-16
+59,74,"Rabies, Distemper, Leptospirosis","Ringworm, Foot and Mouth Disease, Mastitis",2024-07-27
+60,82,"Brucellosis, Parvovirus","Leptospirosis, Pinkeye, Lungworm",2023-12-25
+61,8,"Tetanus, Pasteurella, Brucellosis","Pinkeye, Bluetongue",2023-11-29
+62,38,Tuberculosis,Bovine Tuberculosis,2023-09-14
+63,76,"Tuberculosis, Leptospirosis","Foot and Mouth Disease, Ringworm",2024-02-02
+64,44,"Brucellosis, Tetanus","Lungworm, Ringworm, Brucellosis",2024-05-11
+65,75,Tuberculosis,"Brucellosis, Lungworm, Foot and Mouth Disease",2024-04-05
+66,95,"Bovine Viral Diarrhea, Foot and Mouth Disease, Newcastle Disease, Leptospirosis","Worms, Leptospirosis",2023-10-23
+67,85,Leptospirosis,"Ringworm, Brucellosis",2023-10-03
+68,46,"Parvovirus, Rabies, Distemper, Anthrax","Lungworm, Pinkeye",2023-10-07
+69,54,"Bovine Viral Diarrhea, Foot and Mouth Disease, Rabies, Distemper","Mastitis, Brucellosis",2024-07-15
+70,84,"Brucellosis, Anthrax, Tuberculosis",Mastitis,2024-08-12
+71,84,"Rabies, Distemper, Anthrax, Brucellosis",Ringworm,2023-11-12
+72,35,Newcastle Disease,"Lungworm, Brucellosis, Foot and Mouth Disease",2024-03-09
+73,28,"Tuberculosis, Anthrax, Bovine Viral Diarrhea, Foot and Mouth Disease","Bluetongue, Lungworm, Bovine Tuberculosis",2023-08-23
+74,5,"Brucellosis, Rabies, Distemper, Newcastle Disease","Brucellosis, Lungworm, Foot and Mouth Disease",2023-12-23
+75,43,"Pasteurella, Bovine Viral Diarrhea, Foot and Mouth Disease","Bluetongue, Worms",2024-04-22
+76,8,Pasteurella,"Pinkeye, Mastitis",2024-03-19
+77,11,"Tuberculosis, Parvovirus, Anthrax","Bovine Tuberculosis, Foot and Mouth Disease",2024-04-09
+78,86,"Tetanus, Leptospirosis, Tuberculosis","Bovine Tuberculosis, Pinkeye",2024-01-01
+79,72,"Rabies, Distemper, Newcastle Disease, Brucellosis",Bluetongue,2024-02-01
+80,51,"Leptospirosis, Parvovirus, Anthrax","Foot and Mouth Disease, Ringworm, Brucellosis",2024-01-27
+81,16,"Bovine Viral Diarrhea, Foot and Mouth Disease, Tetanus",Foot and Mouth Disease,2024-05-03
+82,32,Tuberculosis,Worms,2023-12-28
+83,37,Pasteurella,"Worms, Ringworm",2023-09-03
+84,55,Pasteurella,"Brucellosis, Bovine Tuberculosis",2023-09-06
+85,53,"Parvovirus, Tuberculosis","Ringworm, Leptospirosis",2024-06-15
+86,65,Tetanus,"Bluetongue, Leptospirosis, Pinkeye",2023-12-17
+87,60,"Tuberculosis, Tetanus","Mastitis, Brucellosis",2024-06-18
+88,85,Tuberculosis,"Foot and Mouth Disease, Brucellosis, Ringworm",2023-10-11
+89,56,Anthrax,"Brucellosis, Pinkeye, Leptospirosis",2024-03-11
+90,16,"Newcastle Disease, Rabies, Distemper","Ringworm, Mastitis",2023-10-06
+91,74,"Bovine Viral Diarrhea, Foot and Mouth Disease, Anthrax","Bovine Tuberculosis, Lungworm",2024-05-12
+92,85,"Rabies, Distemper","Mastitis, Pinkeye, Brucellosis",2024-04-06
+93,60,Brucellosis,Bovine Tuberculosis,2023-09-27
+94,49,"Leptospirosis, Anthrax, Brucellosis","Ringworm, Bluetongue, Brucellosis",2024-03-17
+95,15,"Bovine Viral Diarrhea, Foot and Mouth Disease, Tetanus, Leptospirosis",Lungworm,2024-03-23
+96,24,"Parvovirus, Leptospirosis","Worms, Leptospirosis, Bluetongue",2024-06-03
+97,47,"Rabies, Distemper, Tetanus, Pasteurella","Foot and Mouth Disease, Ringworm",2024-03-28
+98,54,Newcastle Disease,Bovine Tuberculosis,2024-04-13
+99,45,Brucellosis,"Mastitis, Leptospirosis",2024-03-21
+100,66,"Pasteurella, Leptospirosis, Parvovirus","Mastitis, Foot and Mouth Disease",2024-07-24
