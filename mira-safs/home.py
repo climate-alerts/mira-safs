@@ -1,20 +1,29 @@
 import streamlit as st
 from pathlib import Path
 
+def load_image_path():
+    """Return the absolute path to the image."""
+    # Use Path to safely manage file paths and handle different environments
+    assets_path = Path(__file__).parent / 'assets' / 'field.jpg'
+    
+    # Check if the image exists
+    if assets_path.is_file():
+        return str(assets_path)
+    else:
+        return None
+
 def app():
     # Set the title of the app
     st.title("Welcome to Mira Platform")
 
-    # Path to the image
-    image_path = Path('assets/field.jpg')
+    # Load the image path
+    image_path = load_image_path()
 
-    # Check if the image exists
-    if image_path.is_file():
-        # Display the main image
-        st.image(str(image_path), use_column_width=True)
+    # Display the main image or show an error if the image is not found
+    if image_path:
+        st.image(image_path, use_column_width=True)
     else:
-        # Display an error message if the image is not found
-        st.error(f"Image not found: {image_path}. Please check the path and try again.")
+        st.error("Image not found. Please check the 'assets/field.jpg' path and try again.")
 
     # Create tabs for different topics
     tab1, tab2, tab3, tab4 = st.tabs(["Introduction", "Key Features", "User Testimonials", "Get Started"])
@@ -67,3 +76,4 @@ def app():
 # To run the app as the main entry point, use:
 if __name__ == "__main__":
     app()
+
