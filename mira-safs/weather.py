@@ -2,17 +2,35 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from pathlib import Path
+import os
 
-# Load the climate data
 def load_data():
     """Load the CSV file from the 'assets' directory."""
-    assets_path = Path(__file__).parent / 'assets'
-    csv_path = assets_path / 'climate_data.csv'
-    return pd.read_csv(csv_path)
+    try:
+        # Determine the path to the 'assets' directory
+        # __file__ might not be set in all environments; adjust as needed.
+        base_path = Path(os.path.dirname(os.path.abspath(__file__)))
+        assets_path = base_path / 'assets'
+        csv_path = assets_path / 'climate_data.csv'
+        
+        # Check if the file exists
+        if not csv_path.is_file():
+            raise FileNotFoundError(f"CSV file not found at {csv_path}")
+        
+        # Load the CSV file
+        return pd.read_csv(csv_path)
+    except Exception as e:
+        st.error(f"Error loading data: {e}")
+        return pd.DataFrame()  # Return an empty DataFrame in case of error
 
 def app():
     # Load data
     data = load_data()
+
+    # If data loading fails, handle it gracefully
+    if data.empty:
+        st.error("No data available to display.")
+        return
 
     # Create the Streamlit layout
     st.title("Climate Data Analysis")
@@ -73,3 +91,4 @@ def app():
 
 if __name__ == "__main__":
     app()
+
