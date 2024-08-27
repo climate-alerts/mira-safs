@@ -3,4 +3,7 @@ streamlit-option-menu
 psycopg2-binary
 bcrypt
 python-dotenv
-plotly
+pandas
+scikit-learn
+geopandas
+leafmap
