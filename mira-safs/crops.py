@@ -5,6 +5,7 @@ from sklearn.linear_model import LinearRegression
 from pathlib import Path
 
 def load_data():
+    """Loads data from the 'assets' directory and returns the relevant datasets."""
     # Define the path to the 'assets' directory
     assets_path = Path(__file__).parent / 'assets'
 
@@ -13,37 +14,37 @@ def load_data():
     soil_data = pd.read_csv(assets_path / 'soil_data.csv')
     pest_pathogen_data = pd.read_csv(assets_path / 'pest_pathogen_data.csv')
     fertilizers_data = pd.read_csv(assets_path / 'fertilizers_data.csv')
-    
+
     return crops_data, soil_data, pest_pathogen_data, fertilizers_data
 
 def predict_productivity(soil_datarow, model):
-    # Predict the productivity based on soil conditions
+    """Predict the productivity based on soil conditions."""
     features = soil_datarow[['soil_nitrogen', 'soil_phosphorus', 'soil_potassium', 
                              'soil_moisture', 'soil_ph', 'organic_matter']].values.reshape(1, -1)
     predicted_productivity = model.predict(features)
     return predicted_productivity[0]
 
 def app():
+    """Main function to run the Streamlit app."""
     # Load data
     crops_data, soil_data, pest_pathogen_data, fertilizers_data = load_data()
 
-    # Use the correct column name based on what exists in your data
-    id_column = 'id'  # Change this if your ID column is named differently
-
+    # Check if 'id' column exists in the data
+    id_column = 'id'
     if id_column not in crops_data.columns or id_column not in soil_data.columns:
         st.error(f"'{id_column}' column not found in the datasets. Please check the column names.")
         return
 
-    # Merge crops_data with soil_data to ensure alignment based on the 'id'
+    # Merge crops_data with soil_data to align data based on 'id'
     data = pd.merge(soil_data, crops_data[[id_column, 'production']], on=id_column)
 
-    # Train a model on the aligned dataset for prediction
+    # Train a model for predicting crop productivity based on soil conditions
     X = data[['soil_nitrogen', 'soil_phosphorus', 'soil_potassium', 
               'soil_moisture', 'soil_ph', 'organic_matter']].values
     y = data['production'].values
     model = LinearRegression().fit(X, y)
 
-    # Create tabs
+    # Create tabs for different sections
     tabs = st.tabs(["Crops Overview", "Soil Conditions", "Pest and Pathogen", "Fertilizers"])
 
     with tabs[0]:
@@ -53,7 +54,7 @@ def app():
         historical production trends, and forecasts for future yields based on existing soil conditions.
         """)
         
-        # Create 2x2 layout for graphs
+        # 2x2 Layout for crop overview graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -75,12 +76,11 @@ def app():
 
         with row2:
             st.subheader("Productivity Prediction per Field")
-            # Get the current production values
+            # Get predicted and actual productivity values
             current_production = data['production'].values
-            # Get the predicted productivity values
             productivity_predictions = model.predict(X)
 
-            # Create a DataFrame to hold both current and predicted values
+            # Create a DataFrame for comparison
             comparison_df = pd.DataFrame({
                 'Field ID': data[id_column],
                 'Current Production': current_production,
@@ -101,7 +101,7 @@ def app():
        moisture content, and organic matter. These elements are vital for assessing and enhancing crop productivity.
         """)
         
-        # Create 2x2 layout for graphs
+        # 2x2 Layout for soil condition graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -136,7 +136,7 @@ def app():
         thereby facilitating effective management and mitigation approaches.
         """)
         
-        # Create 2x2 layout for graphs
+        # 2x2 Layout for pest and pathogen graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -169,7 +169,7 @@ def app():
        amounts, and timing of fertilizer usage. Grasping these patterns is essential for enhancing crop yields and preserving soil health.
         """)
         
-        # Create 2x2 layout for graphs
+        # 2x2 Layout for fertilizers graphs
         col1, col2 = st.columns(2)
         row1, row2 = st.columns(2)
 
@@ -185,16 +185,26 @@ def app():
 
         with row1:
             st.subheader("Fertilizer Quantity Over Time")
-            # Assuming there's a date column in fertilizers_data, adjust as necessary
-            # fig = px.line(fertilizers_data, x='date', y='quantity', color='type', title="Fertilizer Quantity Over Time")
-            # st.plotly_chart(fig)
+            # Ensure 'date' column exists and is in correct format
+            if 'date' in fertilizers_data.columns:
+                fertilizers_data['date'] = pd.to_datetime(fertilizers_data['date'], errors='coerce')
+                fertilizers_data['quantity'] = pd.to_numeric(fertilizers_data['quantity'], errors='coerce')
+                fertilizers_data_clean = fertilizers_data.dropna(subset=['date', 'quantity'])
+                
+                # Plot Fertilizer Quantity Over Time
+                fig = px.line(fertilizers_data_clean, x='date', y='quantity', color='type',
+                              title="Fertilizer Quantity Over Time",
+                              labels={'date': 'Date', 'quantity': 'Fertilizer Quantity'})
+                st.plotly_chart(fig)
+            else:
+                st.error("Date column not found in fertilizers_data. Please ensure the data contains a 'date' column.")
 
         with row2:
             st.subheader("Fertilizer Application Prediction")
-            # This would require additional data or model to predict future fertilizer needs
-            # Here, we use a placeholder example
+            # Placeholder for fertilizer prediction model
             fig = px.bar(fertilizers_data, x=id_column, y='quantity', title="Predicted Fertilizer Needs")
             st.plotly_chart(fig)
 
 if __name__ == "__main__":
     app()
+
