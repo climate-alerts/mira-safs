@@ -1,11 +1,20 @@
 import streamlit as st
+from pathlib import Path
 
 def app():
     # Set the title of the app
     st.title("Welcome to Mira Platform")
 
-    # Display the main image
-    st.image("assets/field.jpg", use_column_width=True)  # Ensure this path is correct and the image exists
+    # Path to the image
+    image_path = Path('assets/field.jpg')
+
+    # Check if the image exists
+    if image_path.is_file():
+        # Display the main image
+        st.image(str(image_path), use_column_width=True)
+    else:
+        # Display an error message if the image is not found
+        st.error(f"Image not found: {image_path}. Please check the path and try again.")
 
     # Create tabs for different topics
     tab1, tab2, tab3, tab4 = st.tabs(["Introduction", "Key Features", "User Testimonials", "Get Started"])
